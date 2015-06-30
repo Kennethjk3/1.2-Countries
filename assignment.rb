@@ -11,8 +11,8 @@ updated_list = countries_list.map do |cap|
  cap = cap.split(' - ')
  cap[1] = cap[1].split(' ')
  cap[1].each{|a| a.capitalize! unless ignore.include? a}
- cap[1]=cap[1].join(' ')
-  cap.join(' - ')
+ cap[1] = cap[1].join(' ')
+ cap.join(' - ')
 end 
 puts "There are #{updated_list.count} countries accounted for here. They are as follows:"
 
@@ -21,7 +21,7 @@ for i in 0...updated_list.count
 end
 
 new_file = File.new("updated_countries.txt", "w+")
-   new_file.puts "There are #{[updated_list.count]} countries accounted for here. There are as follows:\n#{updated_list.join("\n")}"
+new_file.puts "There are #{[updated_list.count]} countries accounted for here. There are as follows:\n#{updated_list.join("\n")}"
 new_file.close
 
 
